@@ -1,14 +1,17 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState, memo } from "react"
 import { IsEditToggledContext } from "./App"
 import NodeList from "./NodeList"
 
-function Node() {
+function NodeMemo({id}) {
 
   const isEditToggled = useContext(IsEditToggledContext)
 
   const [nodeValue, setNodeValue] = useState(-1)
 
   const [nodes, setNodes] = useState([])
+  useEffect(() => {
+    console.log(id)
+  })
   
   return (
     <>
@@ -16,7 +19,7 @@ function Node() {
         <div className="flex flex-row align-middle group">
           <div className="text-lg">{nodeValue}</div>
           { isEditToggled && <div className="text-xs flex flex-row align-middle parent *:px-2 *:border-2 *:rounded-3xl *:transition-all *:ml-2">
-          <button onClick={() => setNodes([...nodes, {}])} className="opacity-20 hover:!opacity-100 group-hover:opacity-40 hover:text-green-300 hover:border-green-300">
+          <button onClick={() => setNodes([...nodes, {id: self.crypto.randomUUID()}])} className="opacity-20 hover:!opacity-100 group-hover:opacity-40 hover:text-green-300 hover:border-green-300">
             Add child
           </button>
           <button className="opacity-15 hover:!opacity-100 group-hover:opacity-40 hover:text-amber-300 hover:border-amber-300" onClick={() => setNodeValue(Math.floor(Math.random() * 100))}>
@@ -33,4 +36,5 @@ function Node() {
   )
 }
 
+const Node = memo(NodeMemo)
 export default Node
