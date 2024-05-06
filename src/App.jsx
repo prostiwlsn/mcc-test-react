@@ -17,10 +17,10 @@ function App() {
           Tree
         </div>
         <IsEditToggledContext.Provider value={isEditToggled}>
-          <NodeList nodes={nodes}/>
+          <NodeList nodes={nodes} setNodes={setNodes}/>
         </IsEditToggledContext.Provider>
         <div className="flex flex-row ml-auto mr-auto mt-1 parent *:opacity-40 *:border-2 *:px-3 *:rounded-3xl">
-          <button className="hover:opacity-100 transition-all m-1 hover:text-green-300 hover:border-green-300" onClick={() => setNodes([...nodes, {id: self.crypto.randomUUID()}])}>
+          <button className="hover:opacity-100 transition-all m-1 hover:text-green-300 hover:border-green-300" onClick={() => setNodes([...nodes, {id: self.crypto.randomUUID(), list: nodes, setList: setNodes, nodeValue: -1}])}>
             Add new node
           </button>
           <button className="hover:opacity-100 transition-all m-1 hover:text-amber-300 hover:border-amber-300" onClick={() => setEdit(!isEditToggled)}>
