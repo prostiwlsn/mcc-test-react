@@ -1,6 +1,11 @@
-function NodeValueView({value, setValue, isBeingEdited}){
+import { useContext } from "react"
+import { IsEditToggledContext } from "./App"
 
-    if (!isBeingEdited){
+function NodeValueView({value, setValue, isBeingEdited}){
+    //const isEditToggled = useContext(IsEditToggledContext)
+    const {isEditingToggled, editedNode, setValueEdit } = useContext(IsEditToggledContext)
+
+    if (!isBeingEdited || !isEditingToggled){
         return (
             <>
             <div className="text-lg">{value}</div>
