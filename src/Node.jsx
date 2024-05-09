@@ -2,7 +2,6 @@ import { useContext, useEffect, useState, memo } from "react"
 import { IsEditToggledContext } from "./App"
 import NodeList from "./NodeList"
 import NodeValueView from "./NodeValueView"
-import NodeEditor from "./NodeEditor"
 
 function NodeMemo({id, deleteNode, pushSibling, index}) {
 
