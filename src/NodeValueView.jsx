@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, memo, useEffect } from "react"
 import { IsEditToggledContext } from "./App"
 
 function NodeValueView({value, setValue, isBeingEdited}){
