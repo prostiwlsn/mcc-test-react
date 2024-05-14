@@ -60,7 +60,7 @@ button:focus-visible {
 */
 
 @media (prefers-color-scheme: light) {
-  :root {
+  input {
     color: #213547;
   }
 }
