@@ -15,7 +15,7 @@ function NodeValueView({value, setValue, isBeingEdited}){
     else{
         return (
             <>
-            <input value={value} onChange={(e) => setValue(e.target.value)}/>
+            <input value={value} onChange={(e) => setValue(e.target.value)} className="outline-none text-lg px-2 rounded-xl"/>
             </>
         )
     }

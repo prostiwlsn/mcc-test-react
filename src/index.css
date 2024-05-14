@@ -16,6 +16,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input {
+  background-color: #2b2a33;
+}
 /*
 a {
   font-weight: 500;
@@ -59,8 +63,10 @@ button:focus-visible {
 }
 */
 
+/*
 @media (prefers-color-scheme: light) {
   input {
     color: #213547;
   }
 }
+*/
